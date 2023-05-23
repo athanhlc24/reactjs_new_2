@@ -25,8 +25,12 @@ function Home(props){
     return (
         <section>
             <div className='container'>
-                <h1>Danh sách sản phẩm</h1>
-                <div className='row'>
+            <div className='row'>
+                <div className="col-3">
+                    <h3> danh mục</h3>
+                </div>
+                <div className="col-9">
+                <h3>Danh sách sản phẩm</h3>
                 {
                     products.map((e,k)=>{
                     return (
@@ -44,6 +48,7 @@ function Home(props){
                     )
                     })
                 }
+                </div>
                 </div>
             </div>
         </section>
