@@ -3,15 +3,16 @@ import { get } from './../services/cart.service';
 import UserContext from "../store/context";
 function Cart(props){
     const [products,setProduct] = useState([]);
-    const {cart,setCart} = useContext(UserContext);
-    const  getProducts = async()=>{
-            setProduct(cart);
-    }
+    const {state,dispatch} = useContext(UserContext);
+    // const {cart,setCart} = useContext(UserContext);
+    // const  getProducts = async()=>{
+    //         setProduct(cart);
+    // }
     useEffect(()=>{
 
     });//COMPONENT DID UPDATE
     useEffect( ()=>{
-        getProducts();
+        // getProducts();
     },[]);//COMPONENT DID MOUNT
     useEffect(()=>{
 
@@ -29,7 +30,7 @@ function Cart(props){
                     </thead>
                     <tbody>
                         {
-                            products.map((e,k)=>{
+                            state.cart.map((e,k)=>{
                                 return(
                                     <tr key={k}>
                                         <td><img src={e.thumbnail} className="img-thumbnail" width={120} alt="..." /></td>
